@@ -69,14 +69,14 @@ class MyApp(App):
         #button2.bind(on_press=lambda x: self.show_number(2))
         layout.add_widget(button2)
 
-        close_Button = Button(text='Close')
+        close_Button = Button(text='Return to Main Menu')
         close_Button.bind(on_press=lambda x: self.popup.dismiss())
         layout.add_widget(close_Button)
 
         self.popup = Popup(title='Popup Window', 
                            content=layout, 
                            size_hint=(None, None), 
-                           size=(800, 800))
+                           size=(600, 400))
         self.popup.open()
 
     
