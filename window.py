@@ -46,16 +46,9 @@ class MyApp(App):
         self.carplay_popup.open()
 
     def openFile(self, instance):
-        #filePath = os.path.join('Users', 'jnito', 'Documents', 'hello.txt')
-        filePath = os.path.join('hello.txt')
-        try:
-            if os.name =='posix':
-                subprocess.Popen(['xdg-open', filePath])
-            elif os.name == 'nt':
-                os.startfile(filePath)
-        except Exception as e:
-            print("ERROR OPENING FILE")
-
+        filePath = os.path.join('/home', 'jnito', 'Desktop', 'Carplay.AppImage')
+        # subprocess.run([filePath], check=True)
+        subprocess.Popen([filePath])
     def open_popup(self, instance):
         layout = BoxLayout(orientation='vertical')
 
