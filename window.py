@@ -1,5 +1,6 @@
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
+from kivy.config import Config
 from kivy.uix.popup import Popup
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.uix.button import Button
@@ -8,23 +9,37 @@ import os
 import subprocess
 
 
+Config.set('graphics', 'fullscreen', 'auto')
+Config.set('kivy', 'window_icon', '')
+Config.set('kivy', 'desktop', 1)
+Config.set('graphics', 'borderless', 1)
+
 class MainScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
-        carplay_btn = Button(text="Carplay", size_hint=(0.3, 0.1), pos_hint={'center_x': 0.5, 'center_y': 0.65})
+        carplay_btn = Button(text="Carplay", 
+                             size_hint=(0.3, 0.1), 
+                             pos_hint={'center_x': 0.5, 'center_y': 0.65})
         carplay_btn.bind(on_press=self.carplayMode)
         self.add_widget(carplay_btn)
 
-        open_btn = Button(text="Car Data", size_hint=(0.3, 0.1), pos_hint={'center_x': 0.5, 'center_y': 0.5})
+        open_btn = Button(text="Car Data", 
+                          size_hint=(0.3, 0.1), 
+                          pos_hint={'center_x': 0.5, 'center_y': 0.5})
         open_btn.bind(on_press=self.go_to_info_screen)
         self.add_widget(open_btn)
 
-        track_btn = Button(text="Sport Mode", size_hint=(0.3, 0.1), pos_hint={'center_x': 0.5, 'center_y': 0.35})
+        track_btn = Button(text="Sport Mode", 
+                           size_hint=(0.3, 0.1), 
+                           pos_hint={'center_x': 0.5, 'center_y': 0.35})
         track_btn.bind(on_press=self.go_to_sport_screen)
         self.add_widget(track_btn)
 
-        close_btn = Button(text="Exit Program", size_hint=(0.3, 0.1), pos_hint={'center_x': 0.5, 'center_y': 0.2})
+        close_btn = Button(text="Exit Program", 
+                           size_hint=(0.3, 0.1), 
+                           pos_hint={'center_x': 0.5, 'center_y': 0.2},
+                           background_color=(1, 0, 0, 1))
         close_btn.bind(on_press=self.close_program)
         self.add_widget(close_btn)
 
