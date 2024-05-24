@@ -99,6 +99,7 @@ class sportScreen(Screen):
         label = Label(text="Track Mode", pos_hint={'center_x': 0.5, 'center_y': 0.9})
         back_btn = Button(text="Back", size_hint=(0.3, 0.1), pos_hint={'center_x': 0.5, 'center_y': 0.4})
         back_btn.bind(on_press=self.go_back)
+
         self.add_widget(label)
         self.add_widget(back_btn)
 
