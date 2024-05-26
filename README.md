@@ -1,5 +1,5 @@
-# obd2-infotainment-display
-# Features
+# obd2 Infotainment Display (using Raspberry Pi 4B)
+## Features
 **NOTE THE FOLLOWING FEATURES STILL REMAIN IN DEVELOPMENT**
 - Carplay
     - Using Rhys Morgans "react-carplay", users will be able to connect their iPhones and use Carplay for media, navigation, etc.
