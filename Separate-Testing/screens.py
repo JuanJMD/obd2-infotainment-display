@@ -131,15 +131,17 @@ class TrackScreen(Screen):
     
         super().__init__(**kwargs)
         label = Label(text="Track Mode", pos_hint={'center_x': 0.5, 'center_y': 0.9})
+
+        self.progress_bar = ProgressBar(max=100, value=50, size_hint=(0.6, 10), pos_hint={'center_x': 0.5, 'center_y': 0.7})
+        
+        slider = Slider(min=0, max=100, value=50, size_hint=(0.6, 0.1), pos_hint={'center_x': 0.5, 'center_y': 0.6})
+        slider.bind(value=self.update_progress)
+
+        self.rpm_bar = ProgressBar(max=100, value=50, size_hint=(0.6, 10), pos_hint={'center_x': 0.5, 'center_y': 0.5})
+
+
         back_btn = Factory.CloseButton(text="Back", size_hint=(0.3, 0.1), pos_hint={'center_x': 0.5, 'center_y': 0.2})
         back_btn.bind(on_press=self.go_back)
-
-        self.progress_bar = ProgressBar(max=100, value=50, size_hint=(0.6, 10), pos_hint={'center_x': 0.5, 'center_y': 0.5})
-        self.rpm_bar = ProgressBar(max=100, value=50, size_hint=(0.6, 10), pos_hint={'center_x': 0.5, 'center_y': 0.5})
-        
-
-        slider = Slider(min=0, max=100, value=50, size_hint=(0.6, 0.1), pos_hint={'center_x': 0.5, 'center_y': 0.4})
-        slider.bind(value=self.update_progress)
 
         self.add_widget(label)
         self.add_widget(self.progress_bar)  # Add the ProgressBar to the screen
@@ -156,7 +158,7 @@ class TrackScreen(Screen):
     def update_progress_obd(self, dt):
         obd2_RPM = get_obd2_rpm()
 
-        self.rpm_bar.value = obd2_RPM
+        self.rpm_bar.value = 0
 
     def update_progress(self, instance, value):
         self.progress_bar.value = value

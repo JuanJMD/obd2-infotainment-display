@@ -4,6 +4,9 @@ import time
 def get_obd2_rpm():
     response = connection.query(obd.commands.RPM)
     print(f"LE PRINTER: {response}")
+    if(response is None):
+        print("Response is none")
+        return 0
     return response
 
 
