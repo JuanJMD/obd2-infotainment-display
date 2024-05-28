@@ -11,6 +11,8 @@ def get_obd2_rpm():
 
 
 connection = obd.Async()
+
+
 if(connection.status() == obd.OBDStatus.CAR_CONNECTED):
     print("Car connected")
     connection.watch(obd.commands.RPM)
