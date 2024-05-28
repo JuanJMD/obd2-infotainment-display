@@ -1,6 +1,12 @@
 import obd
 import time
 
+def get_obd2_rpm():
+    response = connection.query(obd.commands.RPM)
+    print(f"LE PRINTER: {response}")
+    return response
+
+
 connection = obd.Async()
 if(connection.status() == obd.OBDStatus.CAR_CONNECTED):
     print("Car connected")
@@ -13,6 +19,7 @@ if(connection.status() == obd.OBDStatus.CAR_CONNECTED):
     print("Connection started")
 
     print(f"RPM: {connection.query(obd.commands.RPM)}")
+    get_obd2_rpm()
     print(f"SPEED: {connection.query(obd.commands.SPEED)}")
     print(f"THROTTLE_POS: {connection.query(obd.commands.THROTTLE_POS)}")
     print(f"FUEL_LEVEL: {connection.query(obd.commands.FUEL_LEVEL)}")
