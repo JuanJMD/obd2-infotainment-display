@@ -17,6 +17,8 @@ from kivy.uix.image import Image
 from kivy.clock import Clock
 
 from screens import MainScreen, CarplayScreen, InfoScreen, TrackScreen, ReverseScreen
+from mediaplayer import AirplayMedia
+
 
 Config.set('graphics', 'fullscreen', 'auto')
 Config.set('kivy', 'window_icon', '')
@@ -57,6 +59,7 @@ class MyApp(App):
         sm.add_widget(InfoScreen(name='info'))
         sm.add_widget(TrackScreen(name='track'))
         sm.add_widget(ReverseScreen(name='reverse'))
+        sm.add_widget(AirplayMedia(name='airplay'))
         return sm
 
 if __name__ == '__main__':
