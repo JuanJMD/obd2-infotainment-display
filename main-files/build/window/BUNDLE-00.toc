@@ -1,0 +1,3 @@
+([('window',
+   '/Users/jnito/Desktop/Github/obd2-infotainment-display/main-files/dist/window',
+   'EXECUTABLE')],)

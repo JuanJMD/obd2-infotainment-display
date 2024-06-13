@@ -1,21 +1,7 @@
 from kivy.app import App
 from kivy.lang import Builder
-from kivy.uix.boxlayout import BoxLayout
 from kivy.config import Config
-from kivy.uix.popup import Popup
 from kivy.uix.screenmanager import ScreenManager, Screen
-from kivy.uix.button import Button
-from kivy.uix.label import Label
-import os
-import time
-import subprocess
-from kivy.factory import Factory
-
-import cv2
-from kivy.graphics.texture import Texture
-from kivy.uix.image import Image
-from kivy.clock import Clock
-
 from screens import MainScreen, CarplayScreen, InfoScreen, TrackScreen, ReverseScreen
 from mediaplayer import AirplayMedia
 
