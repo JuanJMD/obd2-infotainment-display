@@ -14,7 +14,7 @@ from reverse_window import ReverseScreen
 
 #from obd_data import get_obd2_rpm
 
-Builder.load_file('progressbar.kv')
+# Builder.load_file('progressbar.kv')
 
 class MainScreen(Screen):
     def __init__(self, **kwargs):
