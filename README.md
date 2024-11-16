@@ -7,5 +7,5 @@
     - Displays information about the vehicle
 - Track Mode
     - Displays Gravitational Force
-- Bluetooth Mode ( ~~~Under planning~~~ No Longer Under Development)
+- Bluetooth Mode ( ~~Under planning~~ No Longer Under Development)
     - Play media from bluetooth connected devices
