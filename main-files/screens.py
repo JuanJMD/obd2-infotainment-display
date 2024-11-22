@@ -32,7 +32,7 @@ class MainScreen(Screen):
         carplay_btn.bind(on_press=self.carplayMode)
         self.add_widget(carplay_btn)
 
-        open_btn = Factory.RoundedButton(text="Car Data", 
+        open_btn = Factory.RoundedButton(text="Idle Mode", 
                             size_hint=(0.3, 0.1), 
                             pos_hint={'center_x': 0.5, 'center_y': 0.5})
         open_btn.bind(on_press=self.go_to_info_screen)
@@ -71,7 +71,7 @@ class MainScreen(Screen):
 class InfoScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        label = Label(text="This is the info screen", pos_hint={'center_x': 0.5, 'center_y': 0.9})
+        label = Label(text="Idle Mode", pos_hint={'center_x': 0.5, 'center_y': 0.9})
         
         back_btn = Factory.CloseButton(text="Back", size_hint=(0.3, 0.1), pos_hint={'center_x': 0.5, 'center_y': 0.2})
         back_btn.bind(on_press=self.go_back)

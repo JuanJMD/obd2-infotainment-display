@@ -24,13 +24,19 @@ Builder.load_string("""
                     
 <CloseButton@Button>:
     background_color: 0, 0, 0, 0  # remove the default white background
+    #background_color: 0.6, 0, 0, 1  # remove the default white background
     canvas.before:
         Color:
-            rgba: (0.8, 0.1, 0.1, 1) if self.state == 'normal' else (0.6, 0.5, 0.1, 1)  # choose a different color
+            rgba: (0.3, 0, 0, 1) if self.state == 'normal' else (0.6, 0.5, 0.1, 1)  # choose a different color
         RoundedRectangle:
             pos: self.pos
             size: self.size
             radius: [20,]
+        Color:
+            rgba: 0.3, 0, 0, 1
+        Line:
+            rounded_rectangle: (self.x, self.y, self.width, self.height, 20)
+            width: 1
 """)
 
 RoundedButton = Builder.load_string("<RoundedButton@Button>:")
