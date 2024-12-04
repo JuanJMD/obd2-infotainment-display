@@ -16,7 +16,7 @@ Builder.load_string("""
     background_color: 0, 0, 0, 0  # remove the default white background
     canvas.before:
         Color:
-            rgba: (0.1, 0.5, 0.6, 1) if self.state == 'normal' else (0.6, 0.5, 0.1, 1)  # choose a color, you can of course use rgba
+            rgba: (0.1, 0.5, 0.6, 1) if self.state == 'normal' else (0.15, 0.71, 0.85, 1)  # choose a color, you can of course use rgba
         RoundedRectangle:
             pos: self.pos
             size: self.size
@@ -27,7 +27,7 @@ Builder.load_string("""
     #background_color: 0.6, 0, 0, 1  # remove the default white background
     canvas.before:
         Color:
-            rgba: (0.3, 0, 0, 1) if self.state == 'normal' else (0.6, 0.5, 0.1, 1)  # choose a different color
+            rgba: (0.3, 0, 0, 1) if self.state == 'normal' else (0.62, 0, 0, 1)  # choose a different color
         RoundedRectangle:
             pos: self.pos
             size: self.size
