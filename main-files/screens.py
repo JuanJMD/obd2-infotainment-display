@@ -26,19 +26,19 @@ class MainScreen(Screen):
         reverse_cam_btn.bind(on_press=self.open_reverse_cam)
         self.add_widget(reverse_cam_btn)
 
-        carplay_btn = Factory.RoundedButton(text="Carplay", 
+        carplay_btn = Factory.RoundedButton(text="Carplay - UNDER DEVELOPMENT", 
                             size_hint=(0.3, 0.1), 
                             pos_hint={'center_x': 0.5, 'center_y': 0.65})
         carplay_btn.bind(on_press=self.carplayMode)
         self.add_widget(carplay_btn)
 
-        open_btn = Factory.RoundedButton(text="Idle Mode", 
+        open_btn = Factory.RoundedButton(text="Idle Mode - UNDER DEVELOPMENT", 
                             size_hint=(0.3, 0.1), 
                             pos_hint={'center_x': 0.5, 'center_y': 0.5})
         open_btn.bind(on_press=self.go_to_info_screen)
         self.add_widget(open_btn)
 
-        airplay_media_btn = Factory.RoundedButton(text="Airplay Media",
+        airplay_media_btn = Factory.RoundedButton(text="Airplay Media - UNDER DEVELOPMENT",
                             size_hint=(0.3, 0.1),
                             pos_hint={'center_x': 0.5, 'center_y': 0.35})
         airplay_media_btn.bind(on_press=self.open_airplay_media)
@@ -71,7 +71,7 @@ class MainScreen(Screen):
 class InfoScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        label = Label(text="Idle Mode", pos_hint={'center_x': 0.5, 'center_y': 0.9})
+        label = Label(text="Idle Mode - UNDER DEVELOPMENT", pos_hint={'center_x': 0.5, 'center_y': 0.9})
         
         back_btn = Factory.CloseButton(text="Back", size_hint=(0.3, 0.1), pos_hint={'center_x': 0.5, 'center_y': 0.2})
         back_btn.bind(on_press=self.go_back)
