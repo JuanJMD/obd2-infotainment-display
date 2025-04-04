@@ -8,7 +8,7 @@ from kivy.uix.slider import Slider
 from kivy.factory import Factory
 from kivy.clock import Clock
 
-from mediaplayer import AirplayMedia
+from mediaplayer import MediaPlayer
 from carplay_window import CarplayScreen
 from reverse_window import ReverseScreen
 
@@ -26,21 +26,21 @@ class MainScreen(Screen):
         reverse_cam_btn.bind(on_press=self.open_reverse_cam)
         self.add_widget(reverse_cam_btn)
 
-        carplay_btn = Factory.RoundedButton(text="Carplay - UNDER DEVELOPMENT", 
-                            size_hint=(0.3, 0.1), 
-                            pos_hint={'center_x': 0.5, 'center_y': 0.65})
-        carplay_btn.bind(on_press=self.carplayMode)
-        self.add_widget(carplay_btn)
+#        carplay_btn = Factory.RoundedButton(text="Carplay - UNDER DEVELOPMENT", 
+#                            size_hint=(0.3, 0.1), 
+#                            pos_hint={'center_x': 0.5, 'center_y': 0.65})
+#        carplay_btn.bind(on_press=self.carplayMode)
+#        self.add_widget(carplay_btn)
 
         open_btn = Factory.RoundedButton(text="Idle Mode - UNDER DEVELOPMENT", 
                             size_hint=(0.3, 0.1), 
-                            pos_hint={'center_x': 0.5, 'center_y': 0.5})
+                            pos_hint={'center_x': 0.5, 'center_y': 0.65})
         open_btn.bind(on_press=self.go_to_info_screen)
         self.add_widget(open_btn)
 
         airplay_media_btn = Factory.RoundedButton(text="Airplay Media - UNDER DEVELOPMENT",
                             size_hint=(0.3, 0.1),
-                            pos_hint={'center_x': 0.5, 'center_y': 0.35})
+                            pos_hint={'center_x': 0.5, 'center_y': 0.5})
         airplay_media_btn.bind(on_press=self.open_airplay_media)
         self.add_widget(airplay_media_btn)
 
@@ -63,7 +63,7 @@ class MainScreen(Screen):
         self.manager.current = 'reverse'
 
     def open_airplay_media(self, *args):
-        self.manager.current = 'airplay'
+        self.manager.current = 'mediaplayer'
 
     def close_program(self, *args):
         App.get_running_app().stop()

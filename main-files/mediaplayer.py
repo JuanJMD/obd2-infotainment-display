@@ -2,7 +2,7 @@ from kivy.uix.screenmanager import Screen
 from kivy.uix.label import Label
 from kivy.factory import Factory
 
-class AirplayMedia(Screen):
+class MediaPlayer(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         label = Label (text="Media Mode",

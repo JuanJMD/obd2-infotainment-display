@@ -3,7 +3,7 @@ from kivy.lang import Builder
 from kivy.config import Config
 from kivy.uix.screenmanager import ScreenManager, Screen
 from screens import MainScreen, CarplayScreen, InfoScreen, TrackScreen, ReverseScreen
-from mediaplayer import AirplayMedia
+from mediaplayer import MediaPlayer
 
 
 Config.set('graphics', 'fullscreen', 'auto')
@@ -51,7 +51,7 @@ class MyApp(App):
         sm.add_widget(InfoScreen(name='info'))
         sm.add_widget(TrackScreen(name='track'))
         sm.add_widget(ReverseScreen(name='reverse'))
-        sm.add_widget(AirplayMedia(name='airplay'))
+        sm.add_widget(MediaPlayer(name='mediaplayer'))
         return sm
 
 if __name__ == '__main__':
